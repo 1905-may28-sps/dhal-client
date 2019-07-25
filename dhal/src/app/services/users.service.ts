@@ -22,6 +22,10 @@ export class UsersService {
   }
 
   public logIn(user: User) {
-    return this.http.post<User>(`${this.url}/users/username=${user.username}`, user, this.reqOptions );
+    return this.http.post<User>(`${this.url}/login`, user, this.reqOptions );
   }
 }
+
+
+
+

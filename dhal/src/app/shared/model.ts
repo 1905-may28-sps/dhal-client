@@ -59,7 +59,9 @@ export class User {
   lastName: string;
   authorId: string;
   raterId: string;
+  constructor() {}
 }
+
 
 
 

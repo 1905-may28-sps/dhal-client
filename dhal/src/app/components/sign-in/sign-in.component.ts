@@ -11,6 +11,7 @@ import {User} from '../../shared/model';
 export class SignInComponent implements OnInit {
 
   user: User = new User();
+  dataSource: User = new User();
 
   constructor(private userService: UsersService, private router: Router) { }
 
@@ -19,7 +20,9 @@ export class SignInComponent implements OnInit {
 
   signInUser() {
 
-  this.userService.logIn(this.user).subscribe(
+    console.log(`LOGGING IN ${this.user}`);
+
+    this.userService.logIn(this.user).subscribe(
     resp => {
       console.log(resp);
       console.log(this.user);
@@ -27,10 +30,10 @@ export class SignInComponent implements OnInit {
       this.user.email = '';
       this.user.firstName = '';
     */
+      this.dataSource = resp;
+      localStorage.setItem('userData', JSON.stringify(this.dataSource));
       this.user = new User();
       this.router.navigateByUrl('/dashboard');
-
-
     });
 
 
