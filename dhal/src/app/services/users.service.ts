@@ -17,8 +17,11 @@ export class UsersService {
   constructor( private http: HttpClient) {}
 
   public  addUser( user: User) {
+    console.log(user);
+    user.authorId = user.id;
+    user.raterId = user.id;
     console.log(this.url);
-    return this.http.post<User>(`${this.url}/user`, user, this.reqOptions);
+    return this.http.post<User>(`${this.url}/users`, user, this.reqOptions);
   }
 
   public logIn(user: User) {

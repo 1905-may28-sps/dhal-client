@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
         this.user.lastName = '';
         this.user.username = '';
         this.user.password = '';
-        this.rounter.navigateByUrl('/sign-in');
+        this.rounter.navigateByUrl('/signIn');
 
       },
       error => {
