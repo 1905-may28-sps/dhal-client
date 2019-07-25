@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h3>Add New Users</h3>
+  <input type="text" [ngModel]="user.firstName" class="form-control col-4" placeholder="FirstName">
+  <input type="text" [ngModel]="user.lastName" class="form-control col-4" placeholder="LastName">
+  <input type="text" [ngModel]="user.email" class="form-control col-4" placeholder="email">
+  <input type="text" [ngModel]="user.username" class="form-control col-4" placeholder="Username">
+  <input type="text" [ngModel]="user.password" class="form-control col-4" placeholder="Password">
+  <button (click)="registerUser()">Submit</button>
+</div>
