@@ -8,13 +8,15 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     RegistrationComponent,
-    SignInComponent
+    SignInComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
