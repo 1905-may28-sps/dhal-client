@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import {RegistrationComponent} from './components/registration/registration.component';
 import {SignInComponent} from './components/sign-in/sign-in.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
-import {ApiService} from './services/api.service';
 import {tracks} from './shared/tracks';
+import {ApiService} from './services/api.service/api.service';
 
 
 const routes: Routes = [

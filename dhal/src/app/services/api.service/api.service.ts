@@ -29,5 +29,8 @@ export class ApiService {
     return this.httpclient.get('https://cors-anywhere.herokuapp.com/https://api.deezer.com/genre');
   }
 
+  getTrackById(id): Observable<any> {
+    return this.httpclient.get(`https://deezerdevs-deezer.p.rapidapi.com/track/${id}`);
+  }
 
 }
