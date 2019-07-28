@@ -48,27 +48,36 @@ export class DashboardComponent implements OnInit {
       });
     console.log(this);
 
+    this.onReturnPlaylist();
 
-    this.playlistService.getPlaylist(this.user.id).subscribe(
-      resp => {
-        console.log(resp);
-        this.playlists = resp;
-
-        this.playlists.forEach(function (arrayItem) {
-          var trackid = arrayItem.trackId + 2;
-          console.log(trackid);
-          this.getTracks(trackid); /* If you comment or remove this line, it code console logs all the track ids in the playist. I just need
-           this to make a call to the api and get all the tracks and list them*/
-        })
-      });
   }
 
+ onReturnPlaylist() {
+   this.playlistService.getPlaylist(this.user.id).subscribe(
+     resp => {
+       console.log(resp);
+       this.playlists = resp;
+
+       if (resp !== null) {
+         this.playlists.forEach(arraryItem => {
+           var trackid = arraryItem.trackId;
+           console.log(trackid);
+           this.getTracks(trackid);
+         });
+       }
+     });
+ }
+
   getTracks(trackid) {
+    const lsttrk: any[] = [];
     this.apiService.getTrackById(trackid).subscribe(
       data => {
         console.log(data);
+        var trk = data;
+        lsttrk.push(trk);
       }
     );
+    console.log(lsttrk);
   }
 
 
