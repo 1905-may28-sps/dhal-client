@@ -9,6 +9,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {SplashpageComponent} from './components/splashpage/splashpage.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NavbarComponent,
     RegistrationComponent,
     SignInComponent,
-    DashboardComponent
+    DashboardComponent,
+    SplashpageComponent
   ],
   imports: [
     BrowserModule,

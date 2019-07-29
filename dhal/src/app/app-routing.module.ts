@@ -5,6 +5,7 @@ import {SignInComponent} from './components/sign-in/sign-in.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {tracks} from './shared/tracks';
 import {ApiService} from './services/api.service/api.service';
+import {SplashpageComponent} from './components/splashpage/splashpage.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'signIn', component: SignInComponent},
+  {path: 'splash', component: SplashpageComponent },
+
 
 ];
 

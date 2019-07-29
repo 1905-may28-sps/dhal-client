@@ -1,39 +1,84 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+  <!--<a class="navbar-brand" href="#">Navbar</a>-->
+  <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--<span class="navbar-toggler-icon"></span>-->
+  <!--</button>-->
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <span class="nav-link" id="tracks">Tracks</span>
-      </li>
-      <li class="nav-item">
-        <span class="nav-link" id="artist">Artists</span>
-      </li>
-      <li class="nav-item">
-        <span class="nav-link" id="genre">Genres</span>
-      </li>
-      <li class="nav-item">
-        <span class="nav-link" id="albums">Albums</span>
-      </li>
+  <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+    <!--<ul class="navbar-nav mr-auto">-->
+      <!--<li class="nav-item active">-->
+        <!--<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<span class="nav-link" id="tracks">Tracks</span>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<span class="nav-link" id="artist">Artists</span>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<span class="nav-link" id="genre">Genres</span>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+        <!--<span class="nav-link" id="albums">Albums</span>-->
+      <!--</li>-->
 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<div style="text-align:justify" class="jumbotron">
+    <!--</ul>-->
+    <!--<form class="form-inline my-2 my-lg-0">-->
+      <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+      <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+    <!--</form>-->
+  <!--</div>-->
+<!--</nav>-->
+
+<!--<div class="out-carousel">-->
+<!--<main>-->
+
+  <!--<div id="carousel">-->
+
+    <!--<div class="hideLeft">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="prevLeftSecond">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="prev">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="selected">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="next">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="nextRightSecond">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">-->
+    <!--</div>-->
+
+    <!--<div class="hideRight">-->
+      <!--<img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">-->
+    <!--</div>-->
+
+  <!--</div>-->
+
+  <!--<div class="buttons btn-group btn-group-justified">-->
+    <!--<button class="btn btn-primary" id="prev">Prev</button>-->
+    <!--<button class="btn btn-primary" id="next">Next</button>-->
+  <!--</div>-->
+
+<!--</main>-->
+<!--</div>-->
+
+
+<div style="text-align:justify" class="jumbotron" >
   <h3 style="text-align: center">TOP 10</h3>
 
-  <table class="table table-bordered">
+  <table class="table table-bordered" width="600px">
 
     <tr>
       <th></th>
@@ -55,13 +100,26 @@
 
   </table>
 
-<ol>
-  <li *ngFor></li>
-</ol>
+  <table class="table table-hover" >
+    <thead>
+    <h4>Playlist</h4>
+    <tr>
+      <th></th>
+      <th>Song</th>
+      <th>Artist</th>
+      <th>Album</th>
+      <th>Preview Song</th>
+    </tr>
+    </thead>
 
-  <ul>
-    <li *ngFor="let t of lsttrk">{{t}}</li>
-  </ul>
+    <tr   *ngFor="let t of lsttrk">
+      <!--<td><img src="{{t.album.cover}}" alt=""></td>-->
+      <td>{{t.title}}</td>
+      <td>{{t.artist.name}}</td>
+      <td>{{t.album.title}}</td>
+      <td> <a class="col-12" href={{trk.preview}}>Preview</a></td>
+    </tr>
+  </table>
 </div>
 
 

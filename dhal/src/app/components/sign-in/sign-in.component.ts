@@ -36,7 +36,6 @@ export class SignInComponent implements OnInit {
       this.router.navigateByUrl('/dashboard');
     });
 
-
 }
 
 }

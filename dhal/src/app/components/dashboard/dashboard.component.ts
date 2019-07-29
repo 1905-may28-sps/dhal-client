@@ -14,40 +14,36 @@ export class DashboardComponent implements OnInit {
   playlist: Playlist = new Playlist();
   playlists: Playlist[] = [];
   trkId : number;
+  lsttrk: any[] = [];
+
 
 
   constructor(private apiService: ApiService,
               private playlistService: PlaylistService) {
-
   }
 
   lsttracks: tracks[] = [];
   trk: tracks = new tracks();
-  // @ts-ignore
   // playlist: Playlist = new Playlist();
   public trackId = 0;
   user = JSON.parse(localStorage.getItem('userData'));
 
 
   ngOnInit() {
-    // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    // Add 'implements OnInit' to the class.
     this.apiService.gettracks().subscribe(
       data => {
         this.lsttracks = data;
-        console.log(this.lsttracks);
+        // console.log(this.lsttracks);
         const res: tracks[] = [];
-
         for (const x in this.lsttracks) {
           for (let i = 0; i < data.total; i++) {
             this.lsttracks.hasOwnProperty(x) && res.push(this.lsttracks[x][i]);
           }
           this.lsttracks = res;
         }
-        console.log(this.lsttracks[0]);
+        // console.log(this.lsttracks[0]);
       });
-    console.log(this);
-
+    // console.log(this);
     this.onReturnPlaylist();
 
   }
@@ -55,13 +51,13 @@ export class DashboardComponent implements OnInit {
  onReturnPlaylist() {
    this.playlistService.getPlaylist(this.user.id).subscribe(
      resp => {
-       console.log(resp);
+       // console.log(resp);
        this.playlists = resp;
 
        if (resp !== null) {
          this.playlists.forEach(arraryItem => {
            var trackid = arraryItem.trackId;
-           console.log(trackid);
+           // console.log(trackid);
            this.getTracks(trackid);
          });
        }
@@ -69,15 +65,14 @@ export class DashboardComponent implements OnInit {
  }
 
   getTracks(trackid) {
-    const lsttrk: any[] = [];
     this.apiService.getTrackById(trackid).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         var trk = data;
-        lsttrk.push(trk);
+        this.lsttrk.push(trk);
       }
     );
-    console.log(lsttrk);
+    // console.log(this.lsttrk);
   }
 
 
@@ -87,13 +82,13 @@ export class DashboardComponent implements OnInit {
     this.playlist.name = 'food';
     this.playlist.trackId = id;
     this.playlist.userPlaylistId = 6;
-    console.log(this.playlist);
+    // console.log(this.playlist);
 
     this.playlistService.addPlaylist(this.playlist).subscribe(
       resp => {
-        console.log('Adding to playlist 2');
-        console.log(resp);
-        console.log(this.playlist);
+        // console.log('Adding to playlist 2');
+        // console.log(resp);
+        // console.log(this.playlist);
         this.playlist.playlistId = 0;
         this.playlist.ownerId = this.user.id;
         this.playlist.name = 'food';
@@ -103,12 +98,6 @@ export class DashboardComponent implements OnInit {
         window.alert('Something went wrong, We could not create your playlist');
       }
     );
-
-
-    // console.log('Adding to playlist');
-
-    // this.playlist.playlistId = this;
-
   }
 
 }
