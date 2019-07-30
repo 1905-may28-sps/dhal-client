@@ -12,7 +12,7 @@ export class RegistrationComponent implements OnInit {
 
   user: User = new User();
 
-  constructor(private userService: UsersService, private rounter: Router) { }
+  constructor(private userService: UsersService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -29,12 +29,16 @@ export class RegistrationComponent implements OnInit {
         this.user.lastName = '';
         this.user.username = '';
         this.user.password = '';
-        this.rounter.navigateByUrl('/signIn');
+        this.router.navigateByUrl('/signIn');
 
       },
       error => {
         window.alert('Something went wrong, We could not create your new user');
       });
+  }
+
+  goToSignIn(){
+    this.router.navigateByUrl('/signIn');
   }
 
 }

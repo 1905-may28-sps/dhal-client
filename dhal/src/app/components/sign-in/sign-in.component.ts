@@ -38,4 +38,9 @@ export class SignInComponent implements OnInit {
 
 }
 
+goToRegister(){
+  this.router.navigateByUrl('/registration');
+
+}
+
 }
