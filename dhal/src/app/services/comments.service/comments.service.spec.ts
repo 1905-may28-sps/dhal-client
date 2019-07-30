@@ -1,13 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-// @ts-ignore
-import { ApiService } from './';
+import { CommentsService } from '../comments.service';
 
-describe('ApiService', () => {
+describe('CommentsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ApiService = TestBed.get(ApiService);
+    const service: CommentsService = TestBed.get(CommentsService);
     expect(service).toBeTruthy();
   });
 });

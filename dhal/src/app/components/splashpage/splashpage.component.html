@@ -1,8 +1,8 @@
-
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -23,7 +23,6 @@
       <li class="nav-item">
         <span class="nav-link" id="albums">Albums</span>
       </li>
-
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -32,141 +31,268 @@
   </div>
 </nav>
 
-<div class="out-carousel">
-  <main>
+<!--
+<main>
 
-    <div id="carousel">
+  <div id="carousel">
 
-      <div class="hideLeft">
-        <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
-      </div>
-
-      <div class="prevLeftSecond">
-        <img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">
-      </div>
-
-      <div class="prev">
-        <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">
-      </div>
-
-      <div class="selected">
-        <img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">
-      </div>
-
-      <div class="next">
-        <img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">
-      </div>
-
-      <div class="nextRightSecond">
-        <img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">
-      </div>
-
-      <div class="hideRight">
-        <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
-      </div>
-
+    <div class="hideLeft">
+      <img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">
     </div>
 
-    <div class="buttons btn-group btn-group-justified">
-      <button class="btn btn-primary" id="prev">Prev</button>
-      <button class="btn btn-primary" id="next">Next</button>
+    <div class="prevLeftSecond">
+      <img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">
     </div>
 
-  </main>
-</div>
-<app-dashboard></app-dashboard>
+    <body>
+    <div class="maincontainer">
+
+      <div class="thecard">
+    <div class="prev">
+      <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">
+    </div>
+        <div class="theback">
+          <app-album-list></app-album-list>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="maincontainer">
+
+      <div class="thecard">
+
+        <div class="thefront">
+          <div class="selected">
+            <img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg" width="600">
+          </div>
+        </div>
+
+        <div class="theback">
+          <app-dashboard></app-dashboard>
+        </div>
+      </div>
+    </div>
+
+    </body>
+
+    <div class="next">
+      <img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">
+    </div>
+
+    <div class="nextRightSecond">
+      <img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">
+    </div>
+
+    <div class="hideRight">
+      <img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">
+    </div>
+
+  </div>
+
+  <div class="buttons btn-group btn-group-justified">
+    <button class="btn btn-primary" id="prev">Prev</button>
+    <button class="btn btn-primary" id="next">Next</button>
+  </div>
+
+</main>
+-->
+<!--Here is the code snippet for this tutorial on CSS flip cards. Feel free to customise the code and content for your projects.-->
+
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale = 1">-->
+<!--<title>CSS Card Flip</title>-->
+<!--<style>-->
+<!--body{-->
+<!--background: #3C5377;-->
+<!--}-->
+
+<!--/* THE MAINCONTAINER HOLDS EVERYTHING */-->
+<!--.maincontainer{-->
+<!--position: absolute;-->
+<!--width: 250px;-->
+<!--height: 320px;-->
+<!--background: none;-->
+<!--top: 50%;-->
+<!--left: 50%;-->
+<!--transform: translate(-50%, -50%);-->
+
+<!--}-->
+
+<!--/* THE CARD HOLDS THE FRONT AND BACK FACES */-->
+<!--.thecard{-->
+<!--position: relative;-->
+<!--top: 0;-->
+<!--left: 0;-->
+<!--width: 100%;-->
+<!--height: 100%;-->
+<!--border-radius: 10px;-->
+<!--transform-style: preserve-3d;-->
+<!--transition: all 0.8s ease;-->
+<!--}-->
+
+<!--/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */-->
+<!--.thecard:hover{-->
+<!--transform: rotateY(180deg);-->
+<!--}-->
+
+<!--/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */-->
+<!--.thefront{-->
+<!--position: absolute;-->
+<!--top: 0;-->
+<!--left: 0;-->
+<!--width: 100%;-->
+<!--height: 100%;-->
+<!--border-radius: 10px;-->
+<!--backface-visibility: hidden;-->
+<!--overflow: hidden;-->
+<!--background: #ffc728;-->
+<!--color: #000;-->
+<!--}-->
+
+<!--/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */-->
+<!--.theback{-->
+<!--position: absolute;-->
+<!--top: 0;-->
+<!--left: 0;-->
+<!--width: 100%;-->
+<!--height: 100%;-->
+<!--border-radius: 10px;-->
+<!--backface-visibility: hidden;-->
+<!--overflow: hidden;-->
+<!--background: #fafafa;-->
+<!--color: #333;-->
+<!--text-align: center;-->
+<!--transform: rotateY(180deg);-->
+<!--}-->
 
 
-<!--<div style="text-align:justify" class="jumbotron">-->
-  <!--<h3 style="text-align: center">TOP 10</h3>-->
+<!--/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */-->
+<!--.thefront h1, .theback h1{-->
+<!--font-family: 'zilla slab', sans-serif;-->
+<!--padding: 30px;-->
+<!--font-weight: bold;-->
+<!--font-size: 24px;-->
+<!--text-align: center;-->
+<!--}-->
 
-  <!--<table class="table table-bordered">-->
+<!--.thefront p, .theback p{-->
+<!--font-family: 'zilla slab', sans-serif;-->
+<!--padding: 30px;-->
+<!--font-weight: normal;-->
+<!--font-size: 12px;-->
+<!--text-align: center;-->
+<!--}-->
+<!--/*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */-->
+<!--</style>-->
+<!--</head>-->
 
-    <!--<tr>-->
-      <!--<th></th>-->
-      <!--<th>Song</th>-->
-      <!--<th>Artist</th>-->
-      <!--<th>Album</th>-->
-      <!--<th>Preview Song</th>-->
-    <!--</tr>-->
+<!--<body>-->
+<!--<div class="maincontainer">-->
 
-    <!--<tr *ngFor="let trk of lsttracks">-->
-      <!--<td><img src="{{trk.album.cover}}" alt=""></td>-->
-      <!--<td>{{trk.title}}</td>-->
-      <!--<td>{{trk.artist.name}}</td>-->
-      <!--<td>{{trk.album.title}}</td>-->
-      <!--<td> <a class="col-12" href={{trk.preview}}>Preview</a></td>-->
-      <!--<td><span class="btn btn-danger"  style="border-radius: 50%" (click)="addToPlaylist(trk.id)">+</span>-->
-      <!--</td>-->
-    <!--</tr>-->
+<!--<div class="thecard">-->
 
-  <!--</table>-->
+<!--<div class="thefront"><h1>Front of Card</h1><p>This is the front of the card. It contains important information. Please see overleaf for more details.</p></div>-->
 
-  <!--<table class="table table-hover" >-->
-    <!--<thead>-->
-    <!--<h4>Playlist</h4>-->
-    <!--<tr>-->
-      <!--<th></th>-->
-      <!--<th>Song</th>-->
-      <!--<th>Artist</th>-->
-      <!--<th>Album</th>-->
-      <!--<th>Preview Song</th>-->
-    <!--</tr>-->
-    <!--</thead>-->
+<!--<div class="theback"><h1>Back of Card</h1><p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>-->
+<!--<button>Submit</button></div>-->
 
-    <!--<tr   *ngFor="let t of lsttrk">-->
-      <!--&lt;!&ndash;<td><img src="{{t.album.cover}}" alt=""></td>&ndash;&gt;-->
-      <!--<td>{{t.title}}</td>-->
-      <!--<td>{{t.artist.name}}</td>-->
-      <!--<td>{{t.album.title}}</td>-->
-      <!--<td> <a class="col-12" href={{trk.preview}}>Preview</a></td>-->
-    <!--</tr>-->
-  <!--</table>-->
+<!--</div>-->
 <!--</div>-->
 
+<!--</body>-->
+<!--</html>-->
 
 
+<!--<body>-->
+<!--<div class="maincontainer1">-->
 
+  <!--<div class="thecard">-->
 
-
-<!--<main>-->
-
-    <!--<div id="carousel">-->
-
-       <!--<div class="hideLeft">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000165384395-rhrjdn-t500x500.jpg">-->
+    <!--<div class="thefront">-->
+      <!--<div class="selected">-->
+        <!--<img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg" width="600">-->
       <!--</div>-->
+    <!--</div>-->
 
-      <!--<div class="prevLeftSecond">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000185743981-tuesoj-t500x500.jpg">-->
-      <!--</div>-->
+    <!--<div class="theback">-->
+      <!--<app-dashboard></app-dashboard>-->
 
+      <!--<button>Submit</button>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<!--</body>-->
+
+<!--<body>-->
+<!--<div class="maincontainer2">-->
+
+  <!--<div class="thecard">-->
+
+    <!--<div class="thefront">-->
       <!--<div class="prev">-->
         <!--<img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg">-->
       <!--</div>-->
-
-      <!--<div class="selected">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg">-->
-      <!--</div>-->
-
-      <!--<div class="next">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000028787381-1vad7y-t500x500.jpg">-->
-      <!--</div>-->
-
-      <!--<div class="nextRightSecond">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000108468163-dp0b6y-t500x500.jpg">-->
-      <!--</div>-->
-
-      <!--<div class="hideRight">-->
-        <!--<img src="https://i1.sndcdn.com/artworks-000064920701-xrez5z-t500x500.jpg">-->
-      <!--</div>-->
-
     <!--</div>-->
 
-    <!--<div class="buttons btn-group btn-group-justified">-->
-      <!--<button class="btn btn-primary" id="prev">Prev</button>-->
-      <!--<button class="btn btn-primary" id="next">Next</button>-->
+    <!--<div class="theback">-->
+      <!--<app-album-list></app-album-list>-->
+
     <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
-  <!--</main>-->
+<!--</body>-->
 
+<body>
+<div class="row">
+  <div class="column">
+    <div class="maincontainer">
+
+      <div class="thecard">
+
+        <div class="thefront">
+            <img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg" width="30%">
+        </div>
+
+     <div class="theback">
+    <app-album-list></app-album-list>
+  </div>
+</div>
+</div>
+</div>
+
+
+  <!--<div class="column">-->
+    <!--<div class="maincontainer">-->
+
+      <!--<div class="thecard">-->
+
+        <!--<div class="thefront"><img src="https://i1.sndcdn.com/artworks-000062423439-lf7ll2-t500x500.jpg" width="30%"></div>-->
+        <!--<div class="theback"><app-dashboard></app-dashboard>-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+
+
+
+  <!--<div class="column">-->
+    <!--<div class="maincontainer">-->
+
+      <!--<div class="thecard">-->
+
+        <!--<div class="thefront"><img src="https://i1.sndcdn.com/artworks-000158708482-k160g1-t500x500.jpg" width="30%"></div>-->
+        <!--<div class="theback"><app-dashboard></app-dashboard>-->
+          <!--<button>Submit</button>-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+  </div>
+</body>

@@ -1,0 +1,6 @@
+<div (mouseenter)="showTrackList()" (mouseleave)="showCover()">
+  <div *ngIf="!showTracks"><img src="{{imageUrl}}" alt="" ></div>
+<div *ngIf="showTracks">
+<app-dashboard [dashboardId]="dashboardId" ></app-dashboard>
+</div>
+</div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {tracks} from '../../shared/tracks';
 import {ApiService} from '../../services/api.service/api.service';
 import {PlaylistService} from '../../services/playlist.service/playlist.service';
@@ -10,6 +10,7 @@ import {Playlist} from '../../shared/playlist';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  @Input() dashboardId : number;
   title = 'clientSide';
   playlist: Playlist = new Playlist();
   playlists: Playlist[] = [];
@@ -67,7 +68,6 @@ export class DashboardComponent implements OnInit {
   getTracks(trackid) {
     this.apiService.getTrackById(trackid).subscribe(
       data => {
-        // console.log(data);
         var trk = data;
         this.lsttrk.push(trk);
       }
@@ -86,9 +86,6 @@ export class DashboardComponent implements OnInit {
 
     this.playlistService.addPlaylist(this.playlist).subscribe(
       resp => {
-        // console.log('Adding to playlist 2');
-        // console.log(resp);
-        // console.log(this.playlist);
         this.playlist.playlistId = 0;
         this.playlist.ownerId = this.user.id;
         this.playlist.name = 'food';
