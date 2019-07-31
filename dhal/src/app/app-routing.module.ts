@@ -7,8 +7,6 @@ import {tracks} from './shared/tracks';
 import {ApiService} from './services/api.service/api.service';
 import {SplashpageComponent} from './components/splashpage/splashpage.component';
 import {CommentsComponent} from './components/comments/comments.component';
-import {ProfilepageComponent} from './components/profilepage/profilepage.component';
-import {AlbumListComponent} from './components/album-list/album-list.component';
 
 
 const routes: Routes = [
@@ -18,8 +16,6 @@ const routes: Routes = [
   {path: 'signIn', component: SignInComponent},
   {path: 'splash', component: SplashpageComponent },
   {path: 'comment', component: CommentsComponent },
-  {path: 'profile', component: ProfilepageComponent },
-  {path: 'albumlist', component: AlbumListComponent },
 
 
 ];

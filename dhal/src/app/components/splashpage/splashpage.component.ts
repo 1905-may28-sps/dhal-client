@@ -3,7 +3,7 @@ import {PlaylistService} from '../../services/playlist.service/playlist.service'
 import {ApiService} from '../../services/api.service/api.service';
 import {tracks} from '../../shared/tracks';
 import {Playlist} from '../../shared/playlist';
-import * as $ from 'jquery';
+import * as $ from "jquery";
 
 
 @Component({
@@ -15,7 +15,7 @@ export class SplashpageComponent implements OnInit {
   title = 'clientSide';
   playlist: Playlist = new Playlist();
   playlists: Playlist[] = [];
-  trkId: number;
+  trkId : number;
   lsttrk: any[] = [];
   lsttracks: tracks[] = [];
   trk: tracks = new tracks();
@@ -23,6 +23,7 @@ export class SplashpageComponent implements OnInit {
   public trackId = 0;
   user = JSON.parse(localStorage.getItem('userData'));
   flip: boolean;
+
 
 
   constructor(private apiService: ApiService,
@@ -49,12 +50,12 @@ export class SplashpageComponent implements OnInit {
 
 
     function moveToSelected(element) {
-      if (element === 'next') {
+      if (element ==='next') {
         console.log(element);
         selected = (selected).next();
         console.log((selected).next);
       } else if (element == 'prev') {
-        console.log(element);
+        console.log(element)
         var selected = (selected).prev();
       } else {
         var selected = element;
@@ -95,7 +96,7 @@ export class SplashpageComponent implements OnInit {
       e.preventDefault();
     });
 
-    $('#carousel div').click(function () {
+    $('#carousel div').click(function() {
       moveToSelected((this));
     });
 
@@ -133,6 +134,7 @@ export class SplashpageComponent implements OnInit {
         this.lsttrk.push(trk);
       }
     );
+    // console.log(this.lsttrk);
   }
 
 
@@ -142,9 +144,13 @@ export class SplashpageComponent implements OnInit {
     this.playlist.name = 'food';
     this.playlist.trackId = id;
     this.playlist.userPlaylistId = 6;
+    // console.log(this.playlist);
 
     this.playlistService.addPlaylist(this.playlist).subscribe(
       resp => {
+        // console.log('Adding to playlist 2');
+        // console.log(resp);
+        // console.log(this.playlist);
         this.playlist.playlistId = 0;
         this.playlist.ownerId = this.user.id;
         this.playlist.name = 'food';
@@ -154,6 +160,11 @@ export class SplashpageComponent implements OnInit {
         window.alert('Something went wrong, We could not create your playlist');
       }
     );
+  }
+
+  flipAlbum(){
+    this.flip = true;
+
   }
 }
 

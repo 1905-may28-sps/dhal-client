@@ -16,15 +16,12 @@ export class CommentsService {
 
   public postNewComment(comment: Comments) {
     console.log(comment);
+    return this.http.post<Comments>(`${this.url}/comment`, comment, this.reqOptions);
+  }
+
+  public getAllComments( comment: Comments) {
+    console.log(comment);
     return this.http.post<Comments>(`${this.url}/comments`, comment, this.reqOptions);
-  }
-
-  public getAllComments() {
-    return this.http.get<Comments[]>(`${this.url}/comments`);
-  }
-
-  public getAllCommentsByPlaylistId(id){
-    return this.http.get<Comments[]>(`${this.url}/comments${id}`);
   }
 
   public getCommentsById

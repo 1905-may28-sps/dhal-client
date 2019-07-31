@@ -3,6 +3,6 @@ export class Comments {
   authorId: number;
   commentS: string;
   postDate: string;
-  commentRateId: number;
+  commentRateId: string;
   commentId: number;
 }
